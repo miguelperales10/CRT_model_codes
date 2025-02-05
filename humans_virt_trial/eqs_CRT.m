@@ -1,4 +1,4 @@
-function f = ecuaciones_QRT(t,y,parametros) 
+function f = eqs_CRT(t,y,parametros) 
 
 %% All parameters. Some of them are not used in the ODE. 
 rho_S = parametros(1);
