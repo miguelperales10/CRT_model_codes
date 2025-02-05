@@ -1,4 +1,4 @@
-function [OS] = simulando_trials
+function [OS] = simulating_trials
 
 % Number of virtual patients
 N = 1000;
