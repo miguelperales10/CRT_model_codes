@@ -1,4 +1,4 @@
-function error = calcula_error(parameters)
+function error = calc_error(parameters)
 % Calculates the error with respect to the data based on the input parameters:
 
 %% Our parameters (reminder):
