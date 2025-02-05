@@ -14,7 +14,7 @@ function error = calcula_error(parameters)
 
 %% Longitudinal Data:
 num_mouse = round(parameters(end));
-[data,first_RT] = invivo_data(num_mouse);
+[data,first_RT] = invivo_IVIS_data(num_mouse);
 
 
 %% TREATMENT. Fixed for RT-test experiments
