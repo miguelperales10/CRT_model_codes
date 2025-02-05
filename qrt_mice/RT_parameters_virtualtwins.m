@@ -1,4 +1,4 @@
-function [parametros_ajuste,pop_in] = parametros_vt_RT(n_raton)
+function [parametros_ajuste,pop_in] = RT_parameters_virtualtwins(n_raton)
 
 ki67=0.1;
 
