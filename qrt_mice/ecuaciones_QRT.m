@@ -1,4 +1,4 @@
-function f = ecuaciones_QRT(t,y,parametros) 
+function f = eqs_CRT(t,y,parametros) 
 
 % 10% of actively proliferative cells in this animal model.  
 ki67 = 0.1; 
@@ -50,7 +50,7 @@ D = y(6);
 % Drug efficacy
 E_D = y(7); 
 
-%% EDOs:
+%% ODEs:
 f = [rho_S*S + mu_PS*P - alpha_E_D*S*E_D*(E_D>E_D_min) - beta_SP_I*S*E_D*(E_D>E_D_min) + mu_QS*Q*(Q>0) - mu_SQ*S*(S>0);       
      % sensitives, actively proliferative
 
