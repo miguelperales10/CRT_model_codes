@@ -1,4 +1,4 @@
-function [t,poblaciones] = simulacion_combined_CT_RT(p_in,parametros,RT_doses,CT_doses,t_despues_tto)
+function [t,poblaciones] = simulation_combined_CT_RT(p_in,parametros,RT_doses,CT_doses,t_despues_tto)
 
 % 10% of actively proliferative cells in this animal model.  
 ki67 = 0.1; 
