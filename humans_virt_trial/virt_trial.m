@@ -53,7 +53,7 @@ OS = zeros(N,1);
 parfor i = 1:N % patient n.i  % The computational work is paralleled 
 
     parametros = param_dist(i,:);
-    OS_months = simulacion_tto_QRT(vol_in,death_threshold, ...
+    OS_months = CRT_treatment_sim(vol_in,death_threshold, ...
                                    RT_dosis,QT_dosis,parametros);
     OS(i) = OS_months;
     
