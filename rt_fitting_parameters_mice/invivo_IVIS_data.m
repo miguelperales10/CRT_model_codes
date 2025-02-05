@@ -1,4 +1,4 @@
-function [data,first_RT] = invivo_data(num_mouse)
+function [data,first_RT] = invivo_IVIS_data(num_mouse)
 % The data consists of time points and populations for the mouse (IVIS)
 
     % 4 mice from experiment 1:
