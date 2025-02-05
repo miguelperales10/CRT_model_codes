@@ -1,6 +1,6 @@
 function [RT_tto,QT_tto,t_despues_tto] = schedule_treatment(num_treatment)
 
-% Different QRT administration RT+drug schedules
+% Different CRT administration RT+drug schedules
 tto_control = 0;
 tto_Stupp   = 1;
 tto_RT_X1   = 2;
