@@ -1,9 +1,9 @@
 function OS = virt_trial(N,QT_dosis,RT_dosis,delta_ED)
 tic
-% Num de virt patients
+% Num de virt patients. For example:
 %  N = 500
 % 
-% % Trreatment. Stupp is:
+% % Treatment schedule (days). Stupp would be:
 % RT_dosis = [1:5, 8:12, 15:19, 22:26, 29:33, 36:40];
 % QT_ady = [70.02:75.02,70.04:75.04, 98.02:104.02,98.04:104.04, 126.02:131.02,126.04:131.04, 154.02:159.02,154.04:159.04, 182.02:187.02,182.04:187.04, 210.02:215.02,210.04:215.04];
 % QT_dosis = [1.02:42.02, QT_ady];
@@ -12,7 +12,7 @@ tic
 % OS vector:
 OS = [];
 
-% Initial and death volumes:
+% Initial and fatal volumes:
 vol_in = 50;
 death_threshold = 280;
 
@@ -53,7 +53,7 @@ OS = zeros(N,1);
 parfor i = 1:N % patient n.i  % The computational work is paralleled 
 
     parametros = param_dist(i,:);
-    OS_months = CRT_treatment_sim(vol_in,death_threshold, ...
+    OS_months = OS_treat_CRT(vol_in,death_threshold, ...
                                    RT_dosis,QT_dosis,parametros);
     OS(i) = OS_months;
     
