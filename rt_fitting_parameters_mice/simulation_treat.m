@@ -1,4 +1,4 @@
-function [t,populations] = simulacion_tto(p_in,parameters,first_RT,t_after_RT,spacing,dose)
+function [t,populations] = simulation_treat(p_in,parameters,first_RT,t_after_RT,spacing,dose)
 t=[];
 
 %% Our parameters:
@@ -17,7 +17,7 @@ t=[];
 t_in = 0; 
 t_f = first_RT; % When the first irradiation is given
 
-[t1,y1] = ode45(@(t,y)ecuaciones_RT(t,y,parameters(1:3)),t_in: 0.01 : t_f, p_in');
+[t1,y1] = ode45(@(t,y)eqs_RT(t,y,parameters(1:3)),t_in: 0.01 : t_f, p_in');
 t=[t;t1];
 S = y1(:,1);
 Q = y1(:,2);
@@ -43,7 +43,7 @@ for i = 1:dose
     t_f = first_RT + spacing*(i); % When the next irradiation is given
     
     % Solve ODE between RT doses
-    [t1,y1] = ode45(@(t,y)ecuaciones_RT(t,y,parameters(1:3)),t_in: 0.01 : t_f, p_in');
+    [t1,y1] = ode45(@(t,y)eqs_RT(t,y,parameters(1:3)),t_in: 0.01 : t_f, p_in');
     
     %Update populations
     t=[t;t1];
@@ -63,7 +63,7 @@ end
 t_in = first_RT + dose*spacing; 
 t_f = t_in + t_after_RT; % When the first irradiation is given
 
-[t1,y1] = ode45(@(t,y)ecuaciones_RT(t,y,parameters(1:3)),t_in: 0.01 : t_f, p_in');
+[t1,y1] = ode45(@(t,y)eqs_RT(t,y,parameters(1:3)),t_in: 0.01 : t_f, p_in');
 t=[t;t1];
 
 S = [S;y1(:,1)];
