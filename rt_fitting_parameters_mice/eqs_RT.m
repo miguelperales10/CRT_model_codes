@@ -1,4 +1,4 @@
-function f = ecuaciones_RT(t,y, parametros) 
+function f = eqs_RT(t,y, parametros) 
 
 % Percentage of proliferative cells, 10% in SVZ EGFR-wt animal model
 ki67 = 0.1; 
