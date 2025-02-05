@@ -44,7 +44,7 @@ for j = 1:num_patients
     [RT_tto,QT_tto,t_despues_tto] = schedule_treatment(i);
           
     % Simulation
-    [t,poblaciones] = simulacion_combined_CT_RT(p_in,parametros_mouse_j,RT_tto,QT_tto,t_despues_tto);
+    [t,poblaciones] = simulation_combined_CT_RT(p_in,parametros_mouse_j,RT_tto,QT_tto,t_despues_tto);
     
     % Subpopoulations
     S = poblaciones(:,1); 
