@@ -1,4 +1,4 @@
-function OS_months = OS_treat_QRT(vol_in,death_threshold,RT_dosis,QT_dosis,parametros)
+function OS_months = OS_treat_CRT(vol_in,death_threshold,RT_dosis,QT_dosis,parametros)
 
 % Calculate OS of virtual patients (months) depending on parameters, 
 % treatment, initial tumor volume, and fatal tumor volume
