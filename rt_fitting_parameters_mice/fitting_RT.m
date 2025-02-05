@@ -1,10 +1,9 @@
-function [parameters, min_error] = ajustes_RT
+function [parameters, min_error] = fitting_RT
  
 
 min_error = zeros(6,1);
 
 % Fit with several seeds to achieve the global min
-num_seeds = 50; 
 
 
 % Testing different seeds:
@@ -49,7 +48,7 @@ for i = 1:6 % Fitting param. for mouse i
         A(2,1)=0.9; A(2,2) = -1; %non-negativity constraint
         
         % minimize the error function considering previous constraints
-        [y,fval] = fmincon(@calcula_error,[param_In, mouse],A,b,Aeq,beq,lb,ub,[],options);
+        [y,fval] = fmincon(@calc_error,[param_In, mouse],A,b,Aeq,beq,lb,ub,[],options);
         values(:,k) = y
         errors(k) = fval
     end 
