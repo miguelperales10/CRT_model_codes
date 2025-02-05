@@ -1,4 +1,4 @@
-function OS_months = simulacion_tto_QRT(vol_in,death_threshold,RT_dosis,QT_dosis,parametros)
+function OS_months = OS_treat_QRT(vol_in,death_threshold,RT_dosis,QT_dosis,parametros)
 
 % Calculate OS of virtual patients (months) depending on parameters, 
 % treatment, initial tumor volume, and fatal tumor volume
@@ -13,7 +13,7 @@ p_in = [vol_in*ki67, 0, 0, 0, vol_in*(1-ki67), 0, 0];
 t_despues_tto = 3650; 
 
 %% Run the simulation
-[t,poblaciones] = tto_QRT(p_in,parametros,RT_dosis,QT_dosis,t_despues_tto);
+[t,poblaciones] = CRT_treatment_sim(p_in,parametros,RT_dosis,QT_dosis,t_despues_tto);
 
 % Update subpopulations
 S = poblaciones(:,1); % sensitive, actively proliferative
