@@ -1,4 +1,4 @@
-%% Probamos viendo si el espaciado entre terapias supone mejoría
+%% Lets simulate different treatment schedules
 
 % Number of patients. 
 num_patients = 6;
@@ -30,7 +30,7 @@ superv = zeros(num_patients,8);
 % Simulation for mouse j
 for j = 1:num_patients
     
-    [par,pop_in] = parametros_vt_RT(j);
+    [par,pop_in] = RT_parameters_virtualtwins(j);
     parametros_mouse_j = parametros(j,:);
     
 
@@ -44,7 +44,7 @@ for j = 1:num_patients
     [RT_tto,QT_tto,t_despues_tto] = schedule_treatment(i);
           
     % Simulation
-    [t,poblaciones] = simulacion_combined_QT_RT(p_in,parametros_mouse_j,RT_tto,QT_tto,t_despues_tto);
+    [t,poblaciones] = simulacion_combined_CT_RT(p_in,parametros_mouse_j,RT_tto,QT_tto,t_despues_tto);
     
     % Subpopoulations
     S = poblaciones(:,1); 
