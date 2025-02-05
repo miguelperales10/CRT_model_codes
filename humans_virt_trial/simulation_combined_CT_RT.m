@@ -1,4 +1,4 @@
-function [t,poblaciones] = simulacion_combined_QT_RT(p_in,parametros,RT_dosis,QT_dosis,t_despues_tto)
+function [t,poblaciones] = simulation_combined_CT_RT(p_in,parametros,RT_dosis,QT_dosis,t_despues_tto)
 
 % 10% of actively proliferative cells in this animal model.  
 ki67 = 0.1; 
@@ -29,7 +29,7 @@ t_in = 0;
 t_f = min(primera_RT,primera_QT); % Cuando damos la primera irradiación
 
 % Solve the ODE system
-[t1,y1] = ode45(@(t,y)ecuaciones_QRT(t,y,parametros(1:3)),t_in: 0.001 : t_f, p_in');
+[t1,y1] = ode45(@(t,y)eqs_CRT(t,y,parametros(1:3)),t_in: 0.001 : t_f, p_in');
 
 t=[t;t1];
 S = y1(:,1); % sensibles
@@ -72,7 +72,7 @@ for i=1:n_tto
         t_f = t_tto; % When the current RT/drug is administered
         
         % Solve ODE
-        [t1,y1] = ode45(@(t,y)ecuaciones_QRT(t,y,parametros(1:3)),t_in: 0.001 : t_f, p_in');
+        [t1,y1] = ode45(@(t,y)eqs_CRT(t,y,parametros(1:3)),t_in: 0.001 : t_f, p_in');
 
         % Update time vector
         t=[t;t1];
@@ -96,7 +96,7 @@ t_in = t_f;
 t_f = t_in+t_despues_tto; 
 
 % Solve ODE 
-[t1,y1] = ode45(@(t,y)ecuaciones_QRT(t,y,parametros(1:3)),t_in: 0.001 : t_f, p_in');
+[t1,y1] = ode45(@(t,y)eqs_CRT(t,y,parametros(1:3)),t_in: 0.001 : t_f, p_in');
 
 % Update time vector
 t=[t;t1];
