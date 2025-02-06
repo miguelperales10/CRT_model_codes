@@ -4,7 +4,7 @@ function [parameters, min_error] = fitting_RT
 min_error = zeros(6,1);
 
 % Fit with several seeds to achieve the global min
-
+num_seeds = 50;
 
 % Testing different seeds:
 values = zeros(6,num_seeds);
