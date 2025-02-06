@@ -1,10 +1,13 @@
 % Try all different combinations RT-CT and choose the shedule which offers
 % maximal median overall survival
 
+% Fatal IVIS value
 IVIS_death = 0.3e+08;
 
+% time running simulation after the last RT/drug administration (days)
 t_despues_tto = 150;
 
+% Actively proliferating cells fraction (%)
 ki67=0.1;
 
 % Constraints
@@ -12,12 +15,17 @@ a = 16; % max spacing between RT doses
 b = 15; % max spacing between CT doses
 c = 30; % max delay between RT and CT start
 
+% Virtual mice number
 n_rat= 6;
 
+% Median OS
 superv_mediana = zeros(a,b,2*c+1);
 superv = zeros(n_rat,a,b,2*c+1);
 
-optimo=zeros(1,4);
+% Optimal administration treatment schedule
+optimo = zeros(1,4);
+
+%% Simulate all feasible administration treatment schedules
 for i = 1:a 
     for k = 1:b
         for l = -c:c
