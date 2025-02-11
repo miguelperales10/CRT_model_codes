@@ -20,10 +20,13 @@ if num_treatment == tto_control
 
     
     elseif    num_treatment == tto_Stupp
-    RT_tto=[1,2,3];
+    
+    inicio_tto = 4;
+    
+    RT_tto=[1,2,3] + inicio_tto;
     % QT_tto=[1,2,3,5,8,11;  % first row: days
     %         1,1,1,2,2,2];  % second row: number of dosis
-    QT_tto=[1.2,2.2,3.2,5,5.2,8,8.2,11,11.2];  % first row: days (1 doses each day)
+    QT_tto=[1.2,2.2,3.2,5,5.2,8,8.2,11,11.2] + inicio_tto;  % first row: days (1 doses each day)
     t_despues_tto =  200;
     
 
