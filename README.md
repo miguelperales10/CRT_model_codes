@@ -24,13 +24,13 @@ The third folder, crt_mice, contains the codes required to run simulations of vi
   - The "simulation_combined_CT_RT" code simulates the longitudinal evolution of tumor subpopulations in a virtual mouse.
   - The "eqs_RT" code contains the system of ordinary differential equations (ODEs) used in this model.
     
-The fourth folder, global_sensitivity_analysis, contains the codes required to perform a global sensitivity analysis of the CRT model using the FAST and Sobol methods. The analysis identifies the biological and therapeutic scheduling parameters that most significantly impact overall survival in virtual mice. The GSAT folder is included here to handle sampling and computation of sensitivity indices.
-  - The "my_model" code defines the model, which simulate the tumor dynamics until reach the fatal volume, depending on initial condition, CRT model parameters value and treatment schedule. The model output is survival time.
-  - The "CRT_eqs" code contains the equations used to simulate the CRT dynamics, as before.
-  - The "simul_combined_CRT" code simulates tumor evolution under combined chemoradiotherapy.
-  - The "global_sens_analysis_Sobol" code sets up the parameter distributions, runs the model simulations, and computes the sensitivity indices.
-  - The "GSAT" folder contains the toolbox functions for FAST and Sobol analysis, including sampling routines and precomputed Sobol sequences.
-
+The fourth folder, global_sensitivity_analysis, contains the code required to perform a global sensitivity analysis of the CRT model. This analysis identifies the biological and therapeutic scheduling parameters that most significantly impact overall survival in virtual mice. The GSAT folder is included to handle the sampling process and the computation of sensitivity indices.
+  - The global_sens_analysis_Sobol script sets up the parameter distributions, runs the model simulations, and computes the sensitivity first- and total-order Sobols' indices. This is the main script to run in order to obtain the sensitivity analysis results.
+Additionally, among other scripts, the folder includes:
+  - The my_model script, which defines the model that simulates tumor dynamics until the fatal volume is reached. The output is survival time, which depends on the initial conditions, CRT model parameter values, and treatment schedule.
+  - The CRT_eqs script, which contains the equations used to simulate CRT dynamics, as described previously.
+  - The simul_combined_CRT script, which simulates tumor evolution under combined chemoradiotherapy.
+  - The GSAT folder, which contains toolbox functions for FAST and Sobol analysis, including sampling routines.
 
 
 
