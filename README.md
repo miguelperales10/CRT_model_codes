@@ -8,6 +8,7 @@ The first folder, humans_virt_trial, contains the codes used to simulate a clini
   - The "OS_treat_CRT" code calculates the OS of a virtual patient based on individual parameters, initial conditions, and other relevant factors.
   - The "CRT_treatment_sim" code simulates the longitudinal evolution of tumor subpopulations in a virtual patient.
   - The "eqs_CRT" code contains the system of ordinary differential equations (ODEs) used in this model.
+In the "tumor_dynamics" subfolder, representative tumor traces can be plotted by running the "figure_repr_patients" script.
 
 The second folder, rt_fitting_parameters_mice, contains longitudinal data collected from in vivo experiments and the codes used to fit radiotherapy-related parameters.
   - The "invivo_IVIS_data" code contains bioluminescence IVIS measurements for each mouse, the time at which each measurement was taken, and the day each mouse received radiotherapy after the first measurement.
